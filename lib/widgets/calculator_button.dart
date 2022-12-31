@@ -2,17 +2,15 @@ import 'package:digital_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatefulWidget {
-  const CalculatorButton(
-      {Key? key,
-      this.height,
-      this.width,
-      required this.text,
-      this.isBlue = false,
-      this.isDoubleTile = false,
-      required this.onTap})
-      : super(key: key);
-  final double? height;
-  final double? width;
+  const CalculatorButton({
+    Key? key,
+    this.isBlue = false,
+    this.isDoubleTile = false,
+    required this.width,
+    required this.text,
+    required this.onTap,
+  }) : super(key: key);
+  final double width;
   final bool isBlue;
   final String text;
   final bool isDoubleTile;
@@ -38,13 +36,7 @@ class _CalculatorButtonState extends State<CalculatorButton> {
         widget.onTap();
       },
       child: AnimatedContainer(
-        height: (widget.height == null) ? 80 : widget.height,
-        width: (widget.height == null)
-            ? (widget.isDoubleTile)
-                ? 176
-                : 80
-            : widget.width,
-        alignment: Alignment.center,
+        width: widget.width,
         duration: const Duration(milliseconds: 150),
         decoration: BoxDecoration(
           color: (MediaQuery.of(context).platformBrightness == Brightness.light)
@@ -83,18 +75,23 @@ class _CalculatorButtonState extends State<CalculatorButton> {
                       ),
                     ],
         ),
-        child: Text(
-          widget.text,
-          style: TextStyle(
-            color: (widget.isBlue)
-                ? Colors.white
-                : (MediaQuery.of(context).platformBrightness ==
-                        Brightness.light)
-                    ? chineseBlue
-                    : hanBlue,
-            fontSize: 30,
-            fontFamily: "Montserrat",
-            fontWeight: FontWeight.w700,
+        child: AspectRatio(
+          aspectRatio: (widget.isDoubleTile) ? 2.1 : 1,
+          child: Center(
+            child: Text(
+              widget.text,
+              style: TextStyle(
+                color: (widget.isBlue)
+                    ? Colors.white
+                    : (MediaQuery.of(context).platformBrightness ==
+                            Brightness.light)
+                        ? chineseBlue
+                        : hanBlue,
+                fontSize: 30,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700,
+              ),
+            ),
           ),
         ),
       ),

@@ -286,20 +286,21 @@ class _HomeState extends State<Home> {
             body: LayoutBuilder(
               builder: (context, constraints) {
                 if (constraints.maxWidth > constraints.maxHeight) {
-                  double heightPerBox = constraints.maxHeight / 3 - 20;
-                  double widthPerBox = (constraints.maxWidth - 100) / 8;
-                  maxChars = getMaxChars(widthPerBox * 5 + 45) - 1;
+                  //Landscape Layout
+                  double widthPerButton = (constraints.maxWidth - 100) / 8.1;
+                  maxChars = getMaxChars(widthPerButton * 5 + 45) - 1;
                   return SafeArea(
-                    minimum: const EdgeInsets.symmetric(horizontal: 10),
+                    minimum: const EdgeInsets.symmetric(horizontal: 5),
+                    left: false,
+                    right: false,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              height: heightPerBox,
-                              width: widthPerBox * 5 + 45,
+                              width: widthPerButton * 5.5,
                               padding: const EdgeInsets.all(20),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -325,146 +326,125 @@ class _HomeState extends State<Home> {
                             ),
                             CalculatorButton(
                               key: digit7Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "7",
                               onTap: () => setExpressionText("7"),
                             ),
                             CalculatorButton(
                               key: digit8Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "8",
                               onTap: () => setExpressionText("8"),
                             ),
                             CalculatorButton(
                               key: digit9Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "9",
                               onTap: () => setExpressionText("9"),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: allClearKey,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "AC",
                               isBlue: true,
                               onTap: allClear,
                             ),
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "+",
                               isBlue: true,
                               onTap: () => setExpressionText("+"),
                             ),
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "-",
                               isBlue: true,
                               onTap: () => setExpressionText("-"),
                             ),
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "X",
                               isBlue: true,
                               onTap: () => setExpressionText("x"),
                             ),
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "÷",
                               isBlue: true,
                               onTap: () => setExpressionText("/"),
                             ),
                             CalculatorButton(
                               key: digit4Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "4",
                               onTap: () => setExpressionText("4"),
                             ),
                             CalculatorButton(
                               key: digit5Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "5",
                               onTap: () => setExpressionText("5"),
                             ),
                             CalculatorButton(
                               key: digit6Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "6",
                               onTap: () => setExpressionText("6"),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "=",
                               isBlue: true,
                               onTap: compute,
                             ),
                             CalculatorButton(
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "+/-",
                               onTap: switchLastNumber,
                             ),
                             CalculatorButton(
                               key: percentageKey,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "%",
                               onTap: () => setExpressionText("%"),
                             ),
                             CalculatorButton(
                               key: commaKey,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: ",",
                               onTap: () => setExpressionText("."),
                             ),
                             CalculatorButton(
                               key: digit0Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "0",
                               onTap: () => setExpressionText("0"),
                             ),
                             CalculatorButton(
                               key: digit1Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "1",
                               onTap: () => setExpressionText("1"),
                             ),
                             CalculatorButton(
                               key: digit2Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "2",
                               onTap: () => setExpressionText("2"),
                             ),
                             CalculatorButton(
                               key: digit3Key,
-                              height: heightPerBox,
-                              width: widthPerBox,
+                              width: widthPerButton,
                               text: "3",
                               onTap: () => setExpressionText("3"),
                             ),
@@ -474,17 +454,17 @@ class _HomeState extends State<Home> {
                     ),
                   );
                 } else {
+                  double widthPerButton = (constraints.maxWidth - 50) / 4.4;
                   maxChars =
                       getMaxChars(MediaQuery.of(context).size.width - 20) - 2;
                   return SafeArea(
-                    minimum: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Spacer(),
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.symmetric(horizontal: 20),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(
@@ -515,49 +495,57 @@ class _HomeState extends State<Home> {
                         ),
                         const Spacer(),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: allClearKey,
+                              width: widthPerButton,
                               text: "AC",
                               onTap: allClear,
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "+/-",
                               onTap: switchLastNumber,
                             ),
                             CalculatorButton(
                               key: percentageKey,
+                              width: widthPerButton,
                               text: "%",
                               onTap: () => setExpressionText("%"),
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "÷",
                               isBlue: true,
                               onTap: () => setExpressionText("/"),
-                            )
+                            ),
                           ],
                         ),
                         const SizedBox(height: 16),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: digit7Key,
+                              width: widthPerButton,
                               text: "7",
                               onTap: () => setExpressionText("7"),
                             ),
                             CalculatorButton(
                               key: digit8Key,
+                              width: widthPerButton,
                               text: "8",
                               onTap: () => setExpressionText("8"),
                             ),
                             CalculatorButton(
                               key: digit9Key,
+                              width: widthPerButton,
                               text: "9",
                               onTap: () => setExpressionText("9"),
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "X",
                               isBlue: true,
                               onTap: () => setExpressionText("x"),
@@ -566,24 +554,28 @@ class _HomeState extends State<Home> {
                         ),
                         const SizedBox(height: 16),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: digit4Key,
+                              width: widthPerButton,
                               text: "4",
                               onTap: () => setExpressionText("4"),
                             ),
                             CalculatorButton(
                               key: digit5Key,
+                              width: widthPerButton,
                               text: "5",
                               onTap: () => setExpressionText("5"),
                             ),
                             CalculatorButton(
                               key: digit6Key,
+                              width: widthPerButton,
                               text: "6",
                               onTap: () => setExpressionText("6"),
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "-",
                               isBlue: true,
                               onTap: () => setExpressionText("-"),
@@ -592,24 +584,28 @@ class _HomeState extends State<Home> {
                         ),
                         const SizedBox(height: 16),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: digit1Key,
+                              width: widthPerButton,
                               text: "1",
                               onTap: () => setExpressionText("1"),
                             ),
                             CalculatorButton(
                               key: digit2Key,
+                              width: widthPerButton,
                               text: "2",
                               onTap: () => setExpressionText("2"),
                             ),
                             CalculatorButton(
                               key: digit3Key,
+                              width: widthPerButton,
                               text: "3",
                               onTap: () => setExpressionText("3"),
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "+",
                               isBlue: true,
                               onTap: () => setExpressionText("+"),
@@ -618,20 +614,23 @@ class _HomeState extends State<Home> {
                         ),
                         const SizedBox(height: 16),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
                               key: digit0Key,
-                              text: "0",
+                              width: widthPerButton * 2 + 10,
                               isDoubleTile: true,
+                              text: "0",
                               onTap: () => setExpressionText("0"),
                             ),
                             CalculatorButton(
                               key: commaKey,
+                              width: widthPerButton,
                               text: ",",
                               onTap: () => setExpressionText("."),
                             ),
                             CalculatorButton(
+                              width: widthPerButton,
                               text: "=",
                               isBlue: true,
                               onTap: compute,
