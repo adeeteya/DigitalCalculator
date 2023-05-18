@@ -26,7 +26,7 @@ Please star⭐ the repo if you like what you see😊.
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.0/DigitalCalculator-android-1.0.0.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.2/DigitalCalculator-android-1.0.2.apk)
 
 ## ✨ Features
 
@@ -44,17 +44,17 @@ Please star⭐ the repo if you like what you see😊.
 
 ## 📸 Screenshots
 
-![Light Mode Image](images/screenshots/app_screenshot_1.png)
-![Dark Mode Image](images/screenshots/app_screenshot_2.png)
-![Responsive Support Image](images/screenshots/app_screenshot_3.png)
-![Floating Window Image](images/screenshots/app_screenshot_4.png)
+<img alt="Light Mode Image" src="images/screenshots/app_screenshot_1.png" height="587px" width="256px"/>
+<img alt="Dark Mode Image" src="images/screenshots/app_screenshot_2.png" height="587px" width="256px"/>
+<br/>
+<img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/>
+<img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
 
 ## 🔌 Plugins
 
 |Name|Usage|
 |-|-|
 |[**flutter_inset_box_shadow**](https://pub.dev/packages/flutter_inset_box_shadow)|To use inset property for box shadows|
-|[**flutter_native_splash**](https://pub.dev/packages/flutter_native_splash)|To create a Splash Screen for the app|
 |[**math_expressions**](https://pub.dev/packages/math_expressions)|For parsing and evaluating mathematical expressions|
 |[**flutter_lints**](https://pub.dev/packages/flutter_lints)|For linting|
 
@@ -63,7 +63,7 @@ Please star⭐ the repo if you like what you see😊.
 **[Aditya R](https://github.com/adityar224)**
 
 ## 🔖 LICENCE
-Copyright (c) 2022 Aditya R
+Copyright (c) 2023 Aditya R
 [MIT LICENCE](https://github.com/adityar224/DigitalCalculator/blob/master/LICENSE)
 
 ## 🙏 Attributions
