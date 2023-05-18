@@ -44,11 +44,9 @@ Please star⭐ the repo if you like what you see😊.
 
 ## 📸 Screenshots
 
-<img alt="Light Mode Image" src="images/screenshots/app_screenshot_1.png" height="587px" width="256px"/>
-<img alt="Dark Mode Image" src="images/screenshots/app_screenshot_2.png" height="587px" width="256px"/>
+<img alt="Light Mode Image" src="images/screenshots/app_screenshot_1.png" height="587px" width="256px"/> <img alt="Dark Mode Image" src="images/screenshots/app_screenshot_2.png" height="587px" width="256px"/>
 <br/>
-<img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/>
-<img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
+<img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/> <img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
 
 ## 🔌 Plugins
 
