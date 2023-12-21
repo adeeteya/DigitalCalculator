@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatefulWidget {
   const CalculatorButton({
-    Key? key,
+    super.key,
     this.isBlue = false,
     this.isDoubleTile = false,
     required this.width,
     required this.text,
     required this.onTap,
-  }) : super(key: key);
+  });
   final double width;
   final bool isBlue;
   final String text;

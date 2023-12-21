@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 
 class DigitalText extends StatelessWidget {
   const DigitalText(
-      {Key? key,
+      {super.key,
       required this.initialMaxChars,
       required this.text,
-      required this.scrollController})
-      : super(key: key);
+      required this.scrollController});
   final int initialMaxChars;
   final String text;
   final ScrollController scrollController;

@@ -8,7 +8,7 @@ import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();

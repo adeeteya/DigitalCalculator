@@ -7,26 +7,33 @@ Please star⭐ the repo if you like what you see😊.
 
 ## ⌨ Shortcuts
 
-| Shortcut | Action |
-| - | - |
-|![Digits](images/shortcuts/digits.png) | Inputs digits from 0 to 9 |
-|![Addition Key](images/shortcuts/addition.png) | Addition |
-|![Subtraction Key](images/shortcuts/subtraction.png) | Subtraction |
-|![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png) | Multiplication |
-|![Forward Slash Key](images/shortcuts/division.png) | Division |
-|![Percent Key](images/shortcuts/percent.png) | Percentage |
-|![Backspace Key](images/shortcuts/backspace.png) | Delete a Digit |
-|![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png) | Decimal Point |
-|![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png) | Evaluate |
-|![Character c Key](images/shortcuts/c.png) ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png) | All Clear |
+| Shortcut                                                                                                                         | Action                    |
+|----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| ![Digits](images/shortcuts/digits.png)                                                                                           | Inputs digits from 0 to 9 |
+| ![Addition Key](images/shortcuts/addition.png)                                                                                   | Addition                  |
+| ![Subtraction Key](images/shortcuts/subtraction.png)                                                                             | Subtraction               |
+| ![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png)                                  | Multiplication            |
+| ![Forward Slash Key](images/shortcuts/division.png)                                                                              | Division                  |
+| ![Percent Key](images/shortcuts/percent.png)                                                                                     | Percentage                |
+| ![Backspace Key](images/shortcuts/backspace.png)                                                                                 | Delete a Digit            |
+| ![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png)                                              | Decimal Point             |
+| ![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png)                                                | Evaluate                  |
+| ![Character c Key](images/shortcuts/c.png) ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png) | All Clear                 |
 
 ## 💻 Installation links
 
+### [Click here to visit the website version](https://adityar224.github.io/DigitalCalculator/#/)
+
+### Android
 <a href='https://play.google.com/store/apps/details?id=com.adeeteya.digital_calculator&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.2/DigitalCalculator-android-1.0.2.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.3/DigitalCalculator-android-1.0.3.apk)
+
+### Windows
+[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.3/DigitalCalculator-Windows.exe)
+
 
 ## ✨ Features
 
@@ -50,11 +57,11 @@ Please star⭐ the repo if you like what you see😊.
 
 ## 🔌 Plugins
 
-|Name|Usage|
-|-|-|
-|[**flutter_inset_box_shadow**](https://pub.dev/packages/flutter_inset_box_shadow)|To use inset property for box shadows|
-|[**math_expressions**](https://pub.dev/packages/math_expressions)|For parsing and evaluating mathematical expressions|
-|[**flutter_lints**](https://pub.dev/packages/flutter_lints)|For linting|
+| Name                                                                              | Usage                                               |
+|-----------------------------------------------------------------------------------|-----------------------------------------------------|
+| [**flutter_inset_box_shadow**](https://pub.dev/packages/flutter_inset_box_shadow) | To use inset property for box shadows               |
+| [**math_expressions**](https://pub.dev/packages/math_expressions)                 | For parsing and evaluating mathematical expressions |
+| [**flutter_lints**](https://pub.dev/packages/flutter_lints)                       | For linting                                         |
 
 ## 🤓 Author
 

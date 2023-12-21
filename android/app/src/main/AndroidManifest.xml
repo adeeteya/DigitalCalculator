@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.digital_calculator">
+    package="com.adeeteya.digital_calculator">
    <application
         android:label="Digital Calculator"
         android:name="${applicationName}"
