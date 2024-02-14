@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
   final GlobalKey digit9Key = GlobalKey();
   final GlobalKey commaKey = GlobalKey();
   final GlobalKey percentageKey = GlobalKey();
-  final GlobalKey allClearKey = GlobalKey();
+  final GlobalKey clearKey = GlobalKey();
 
   void scrollBack() {
     if (scrollToMinExtent) {
@@ -164,13 +164,6 @@ class _HomeState extends State<Home> {
     }
   }
 
-  void allClear() {
-    scrollBack();
-    setState(() {
-      expressionText = "0";
-    });
-  }
-
   void deleteCharacter() {
     if (expressionText == "0" || expressionText == "ERR") {
       return;
@@ -221,9 +214,9 @@ class _HomeState extends State<Home> {
         LogicalKeySet(LogicalKeyboardKey.comma): const PeriodIntent(),
         LogicalKeySet(LogicalKeyboardKey.enter): const ComputeIntent(),
         LogicalKeySet(LogicalKeyboardKey.equal): const ComputeIntent(),
-        LogicalKeySet(LogicalKeyboardKey.escape): const AllClearIntent(),
-        LogicalKeySet(LogicalKeyboardKey.delete): const AllClearIntent(),
-        const CharacterActivator("c"): const AllClearIntent(),
+        LogicalKeySet(LogicalKeyboardKey.escape): const BackSpaceIntent(),
+        LogicalKeySet(LogicalKeyboardKey.delete): const BackSpaceIntent(),
+        const CharacterActivator("c"): const BackSpaceIntent(),
       },
       child: Actions(
         actions: {
@@ -273,10 +266,8 @@ class _HomeState extends State<Home> {
               onInvoke: (intent) => simulateButtonPress(
                   commaKey.currentContext?.findRenderObject() as RenderBox)),
           BackSpaceIntent: CallbackAction<BackSpaceIntent>(
-              onInvoke: (intent) => deleteCharacter()),
-          AllClearIntent: CallbackAction<AllClearIntent>(
               onInvoke: (intent) => simulateButtonPress(
-                  allClearKey.currentContext?.findRenderObject() as RenderBox)),
+                  clearKey.currentContext?.findRenderObject() as RenderBox)),
           ComputeIntent:
               CallbackAction<ComputeIntent>(onInvoke: (intent) => compute()),
         },
@@ -348,11 +339,11 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
-                              key: allClearKey,
+                              key: clearKey,
                               width: widthPerButton,
-                              text: "AC",
+                              text: "C",
                               isBlue: true,
-                              onTap: allClear,
+                              onTap: deleteCharacter,
                             ),
                             CalculatorButton(
                               width: widthPerButton,
@@ -498,10 +489,10 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CalculatorButton(
-                              key: allClearKey,
+                              key: clearKey,
                               width: widthPerButton,
-                              text: "AC",
-                              onTap: allClear,
+                              text: "C",
+                              onTap: deleteCharacter,
                             ),
                             CalculatorButton(
                               width: widthPerButton,
@@ -721,8 +712,4 @@ class BackSpaceIntent extends Intent {
 
 class ComputeIntent extends Intent {
   const ComputeIntent();
-}
-
-class AllClearIntent extends Intent {
-  const AllClearIntent();
 }

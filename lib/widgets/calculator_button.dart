@@ -37,7 +37,7 @@ class _CalculatorButtonState extends State<CalculatorButton> {
       },
       child: AnimatedContainer(
         width: widget.width,
-        duration: const Duration(milliseconds: 150),
+        duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
           color: (MediaQuery.of(context).platformBrightness == Brightness.light)
               ? (widget.isBlue)

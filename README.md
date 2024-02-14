@@ -5,23 +5,12 @@ It has keyboard support and a few useful shortcuts for quick and easy access. It
 
 Please star⭐ the repo if you like what you see😊.
 
-## ⌨ Shortcuts
-
-| Shortcut                                                                                                                         | Action                    |
-|----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| ![Digits](images/shortcuts/digits.png)                                                                                           | Inputs digits from 0 to 9 |
-| ![Addition Key](images/shortcuts/addition.png)                                                                                   | Addition                  |
-| ![Subtraction Key](images/shortcuts/subtraction.png)                                                                             | Subtraction               |
-| ![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png)                                  | Multiplication            |
-| ![Forward Slash Key](images/shortcuts/division.png)                                                                              | Division                  |
-| ![Percent Key](images/shortcuts/percent.png)                                                                                     | Percentage                |
-| ![Backspace Key](images/shortcuts/backspace.png)                                                                                 | Delete a Digit            |
-| ![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png)                                              | Decimal Point             |
-| ![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png)                                                | Evaluate                  |
-| ![Character c Key](images/shortcuts/c.png) ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png) | All Clear                 |
+## 📸 Screenshots
+<img alt="Light Mode Image" src="images/screenshots/app_screenshot_1.png" height="587px" width="256px"/> <img alt="Dark Mode Image" src="images/screenshots/app_screenshot_2.png" height="587px" width="256px"/>
+<br/>
+<img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/> <img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
 
 ## 💻 Installation links
-
 ### [Click here to visit the website version](https://adityar224.github.io/DigitalCalculator/#/)
 
 ### Android
@@ -29,14 +18,12 @@ Please star⭐ the repo if you like what you see😊.
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.3/DigitalCalculator-android-1.0.3.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-android-1.1.0.apk)
 
 ### Windows
-[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adityar224/DigitalCalculator/releases/download/1.0.3/DigitalCalculator-Windows.exe)
-
+[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adityar224/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-Windows.exe)
 
 ## ✨ Features
-
 - [x] Keyboard Support (even for Android and iOS)
 - [x] Shortcuts Support
 - [x] Digital Display
@@ -49,14 +36,21 @@ Please star⭐ the repo if you like what you see😊.
 - [ ] Scientific Calculator
 - [ ] Calculator History
 
-## 📸 Screenshots
-
-<img alt="Light Mode Image" src="images/screenshots/app_screenshot_1.png" height="587px" width="256px"/> <img alt="Dark Mode Image" src="images/screenshots/app_screenshot_2.png" height="587px" width="256px"/>
-<br/>
-<img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/> <img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
+## ⌨ Shortcuts
+| Shortcut                                                                                                                         | Action                    |
+|----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| ![Digits](images/shortcuts/digits.png)                                                                                           | Inputs digits from 0 to 9 |
+| ![Addition Key](images/shortcuts/addition.png)                                                                                   | Addition                  |
+| ![Subtraction Key](images/shortcuts/subtraction.png)                                                                             | Subtraction               |
+| ![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png)                                  | Multiplication            |
+| ![Forward Slash Key](images/shortcuts/division.png)                                                                              | Division                  |
+| ![Percent Key](images/shortcuts/percent.png)                                                                                     | Percentage                |
+| ![Backspace Key](images/shortcuts/backspace.png)                                                                                 | Delete a Digit            |
+| ![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png)                                              | Decimal Point             |
+| ![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png)                                                | Evaluate                  |
+| ![Character c Key](images/shortcuts/c.png) ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png) | Clear Character           |
 
 ## 🔌 Plugins
-
 | Name                                                                              | Usage                                               |
 |-----------------------------------------------------------------------------------|-----------------------------------------------------|
 | [**flutter_inset_box_shadow**](https://pub.dev/packages/flutter_inset_box_shadow) | To use inset property for box shadows               |
@@ -64,7 +58,6 @@ Please star⭐ the repo if you like what you see😊.
 | [**flutter_lints**](https://pub.dev/packages/flutter_lints)                       | For linting                                         |
 
 ## 🤓 Author
-
 **[Aditya R](https://github.com/adityar224)**
 
 ## 🔖 LICENCE
