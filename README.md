@@ -11,17 +11,17 @@ Please star⭐ the repo if you like what you see😊.
 <img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/> <img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
 
 ## 💻 Installation links
-### [Click here to visit the website version](https://adityar224.github.io/DigitalCalculator/#/)
+### [Click here to visit the website version](https://adeeteya.github.io/DigitalCalculator/#/)
 
 ### Android
 <a href='https://play.google.com/store/apps/details?id=com.adeeteya.digital_calculator&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adityar224/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-android-1.1.0.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-android-1.1.0.apk)
 
 ### Windows
-[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adityar224/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-Windows.exe)
+[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-Windows.exe)
 
 ## ✨ Features
 - [x] Keyboard Support (even for Android and iOS)
@@ -58,11 +58,11 @@ Please star⭐ the repo if you like what you see😊.
 | [**flutter_lints**](https://pub.dev/packages/flutter_lints)                       | For linting                                         |
 
 ## 🤓 Author
-**[Aditya R](https://github.com/adityar224)**
+**[Aditya R](https://github.com/adeeteya)**
 
 ## 🔖 LICENCE
 Copyright (c) 2023 Aditya R
-[MIT LICENCE](https://github.com/adityar224/DigitalCalculator/blob/master/LICENSE)
+[MIT LICENCE](https://github.com/adeeteya/DigitalCalculator/blob/master/LICENSE)
 
 ## 🙏 Attributions
 <a href="https://www.flaticon.com/free-icons/calculator" title="calculator icons">Calculator icons created by Freepik - Flaticon</a>
