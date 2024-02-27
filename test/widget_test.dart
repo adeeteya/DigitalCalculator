@@ -162,7 +162,7 @@ void main() {
     expect(find.text('0.69'), findsOneWidget);
   });
 
-  testWidgets('All Clear Test', (WidgetTester tester) async {
+  testWidgets('Clear Test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const DigitalCalculatorApp());
 
@@ -177,7 +177,28 @@ void main() {
     expect(find.text("69"), findsOneWidget);
 
     // Tap the All Clear Button
-    await tester.tap(find.text("AC"));
+    await tester.tap(find.text("C"));
+    await tester.pump();
+
+    expect(find.text('6'), findsExactly(2));
+  });
+
+  testWidgets('All Clear Test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const DigitalCalculatorApp());
+
+    // Tap the 6 Digit Button
+    await tester.tap(find.text("6"));
+    await tester.pump();
+
+    // Tap the 9 Digit Button
+    await tester.tap(find.text("9"));
+    await tester.pump();
+
+    expect(find.text("69"), findsOneWidget);
+
+    // Hold the Clear Button
+    await tester.longPress(find.text("C"));
     await tester.pump();
 
     expect(find.text('0'), findsExactly(2));

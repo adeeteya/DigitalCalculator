@@ -1,0 +1,2 @@
+Replaces All Clear Button with Clear Button (just a single backspace instead of clearing them all completely)
+Improves the button click animation

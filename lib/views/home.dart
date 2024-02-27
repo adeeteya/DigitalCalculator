@@ -1,5 +1,7 @@
 import 'package:digital_calculator/constants.dart';
+import 'package:digital_calculator/intents.dart';
 import 'package:digital_calculator/widgets/calculator_button.dart';
+import 'package:digital_calculator/widgets/clear_button.dart';
 import 'package:digital_calculator/widgets/digital_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
@@ -15,10 +17,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final ScrollController resultScrollController = ScrollController();
   String expressionText = "0";
   int maxChars = 50;
   bool scrollToMinExtent = false;
+  final ScrollController resultScrollController = ScrollController();
+  final GlobalKey digit0Key = GlobalKey();
+  final GlobalKey digit1Key = GlobalKey();
+  final GlobalKey digit2Key = GlobalKey();
+  final GlobalKey digit3Key = GlobalKey();
+  final GlobalKey digit4Key = GlobalKey();
+  final GlobalKey digit5Key = GlobalKey();
+  final GlobalKey digit6Key = GlobalKey();
+  final GlobalKey digit7Key = GlobalKey();
+  final GlobalKey digit8Key = GlobalKey();
+  final GlobalKey digit9Key = GlobalKey();
+  final GlobalKey commaKey = GlobalKey();
+  final GlobalKey percentageKey = GlobalKey();
+  final GlobalKey clearKey = GlobalKey();
+
   int getMaxChars(double width) {
     late int numLines;
     TextSpan span = const TextSpan(
@@ -45,20 +61,6 @@ class _HomeState extends State<Home> {
     } while (numLines > 1);
     return span.text?.length ?? 50;
   }
-
-  final GlobalKey digit0Key = GlobalKey();
-  final GlobalKey digit1Key = GlobalKey();
-  final GlobalKey digit2Key = GlobalKey();
-  final GlobalKey digit3Key = GlobalKey();
-  final GlobalKey digit4Key = GlobalKey();
-  final GlobalKey digit5Key = GlobalKey();
-  final GlobalKey digit6Key = GlobalKey();
-  final GlobalKey digit7Key = GlobalKey();
-  final GlobalKey digit8Key = GlobalKey();
-  final GlobalKey digit9Key = GlobalKey();
-  final GlobalKey commaKey = GlobalKey();
-  final GlobalKey percentageKey = GlobalKey();
-  final GlobalKey clearKey = GlobalKey();
 
   void scrollBack() {
     if (scrollToMinExtent) {
@@ -177,6 +179,13 @@ class _HomeState extends State<Home> {
     });
   }
 
+  void allClear() {
+    scrollBack();
+    setState(() {
+      expressionText = "0";
+    });
+  }
+
   Future simulateButtonPress(RenderBox renderBox) async {
     Offset buttonOffset = Offset(renderBox.localToGlobal(Offset.zero).dx + 10,
         renderBox.localToGlobal(Offset.zero).dy + 10);
@@ -216,7 +225,7 @@ class _HomeState extends State<Home> {
         LogicalKeySet(LogicalKeyboardKey.equal): const ComputeIntent(),
         LogicalKeySet(LogicalKeyboardKey.escape): const BackSpaceIntent(),
         LogicalKeySet(LogicalKeyboardKey.delete): const BackSpaceIntent(),
-        const CharacterActivator("c"): const BackSpaceIntent(),
+        const CharacterActivator("c"): const AllClearIntent(),
       },
       child: Actions(
         actions: {
@@ -266,8 +275,9 @@ class _HomeState extends State<Home> {
               onInvoke: (intent) => simulateButtonPress(
                   commaKey.currentContext?.findRenderObject() as RenderBox)),
           BackSpaceIntent: CallbackAction<BackSpaceIntent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  clearKey.currentContext?.findRenderObject() as RenderBox)),
+              onInvoke: (intent) => deleteCharacter()),
+          AllClearIntent:
+              CallbackAction<AllClearIntent>(onInvoke: (intent) => allClear()),
           ComputeIntent:
               CallbackAction<ComputeIntent>(onInvoke: (intent) => compute()),
         },
@@ -276,6 +286,7 @@ class _HomeState extends State<Home> {
           child: Scaffold(
             body: LayoutBuilder(
               builder: (context, constraints) {
+                //If The Layout is in Landscape Mode
                 if (constraints.maxWidth > constraints.maxHeight) {
                   //Landscape Layout
                   double widthPerButton = (constraints.maxWidth - 100) / 8.1;
@@ -338,12 +349,11 @@ class _HomeState extends State<Home> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CalculatorButton(
+                            ClearButton(
                               key: clearKey,
                               width: widthPerButton,
-                              text: "C",
-                              isBlue: true,
                               onTap: deleteCharacter,
+                              onLongPress: allClear,
                             ),
                             CalculatorButton(
                               width: widthPerButton,
@@ -444,7 +454,9 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   );
-                } else {
+                }
+                //If The Layout is in Portrait Mode
+                else {
                   double widthPerButton = (constraints.maxWidth - 50) / 4.4;
                   maxChars =
                       getMaxChars(MediaQuery.of(context).size.width - 20) - 2;
@@ -488,11 +500,11 @@ class _HomeState extends State<Home> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CalculatorButton(
+                            ClearButton(
                               key: clearKey,
                               width: widthPerButton,
-                              text: "C",
                               onTap: deleteCharacter,
+                              onLongPress: allClear,
                             ),
                             CalculatorButton(
                               width: widthPerButton,
@@ -640,76 +652,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-}
-
-class Digit0Intent extends Intent {
-  const Digit0Intent();
-}
-
-class Digit1Intent extends Intent {
-  const Digit1Intent();
-}
-
-class Digit2Intent extends Intent {
-  const Digit2Intent();
-}
-
-class Digit3Intent extends Intent {
-  const Digit3Intent();
-}
-
-class Digit4Intent extends Intent {
-  const Digit4Intent();
-}
-
-class Digit5Intent extends Intent {
-  const Digit5Intent();
-}
-
-class Digit6Intent extends Intent {
-  const Digit6Intent();
-}
-
-class Digit7Intent extends Intent {
-  const Digit7Intent();
-}
-
-class Digit8Intent extends Intent {
-  const Digit8Intent();
-}
-
-class Digit9Intent extends Intent {
-  const Digit9Intent();
-}
-
-class AdditionIntent extends Intent {
-  const AdditionIntent();
-}
-
-class SubtractionIntent extends Intent {
-  const SubtractionIntent();
-}
-
-class MultiplicationIntent extends Intent {
-  const MultiplicationIntent();
-}
-
-class DivisionIntent extends Intent {
-  const DivisionIntent();
-}
-
-class PercentIntent extends Intent {
-  const PercentIntent();
-}
-
-class PeriodIntent extends Intent {
-  const PeriodIntent();
-}
-
-class BackSpaceIntent extends Intent {
-  const BackSpaceIntent();
-}
-
-class ComputeIntent extends Intent {
-  const ComputeIntent();
 }

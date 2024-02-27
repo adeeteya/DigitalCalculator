@@ -18,10 +18,10 @@ Please star⭐ the repo if you like what you see😊.
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-android-1.1.0.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.1/DigitalCalculator-android-1.1.1.apk)
 
 ### Windows
-[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.0/DigitalCalculator-Windows.exe)
+[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.1/DigitalCalculator-Windows.exe)
 
 ## ✨ Features
 - [x] Keyboard Support (even for Android and iOS)
@@ -37,18 +37,19 @@ Please star⭐ the repo if you like what you see😊.
 - [ ] Calculator History
 
 ## ⌨ Shortcuts
-| Shortcut                                                                                                                         | Action                    |
-|----------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| ![Digits](images/shortcuts/digits.png)                                                                                           | Inputs digits from 0 to 9 |
-| ![Addition Key](images/shortcuts/addition.png)                                                                                   | Addition                  |
-| ![Subtraction Key](images/shortcuts/subtraction.png)                                                                             | Subtraction               |
-| ![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png)                                  | Multiplication            |
-| ![Forward Slash Key](images/shortcuts/division.png)                                                                              | Division                  |
-| ![Percent Key](images/shortcuts/percent.png)                                                                                     | Percentage                |
-| ![Backspace Key](images/shortcuts/backspace.png)                                                                                 | Delete a Digit            |
-| ![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png)                                              | Decimal Point             |
-| ![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png)                                                | Evaluate                  |
-| ![Character c Key](images/shortcuts/c.png) ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png) | Clear Character           |
+| Shortcut                                                                                        | Action                    |
+|-------------------------------------------------------------------------------------------------|---------------------------|
+| ![Digits](images/shortcuts/digits.png)                                                          | Inputs digits from 0 to 9 |
+| ![Addition Key](images/shortcuts/addition.png)                                                  | Addition                  |
+| ![Subtraction Key](images/shortcuts/subtraction.png)                                            | Subtraction               |
+| ![Character X Key](images/shortcuts/x.png) ![Asterisk Key](images/shortcuts/multiplication.png) | Multiplication            |
+| ![Forward Slash Key](images/shortcuts/division.png)                                             | Division                  |
+| ![Percent Key](images/shortcuts/percent.png)                                                    | Percentage                |
+| ![Backspace Key](images/shortcuts/backspace.png)                                                | Delete a Digit            |
+| ![Period Key](images/shortcuts/period.png) ![Comma Key](images/shortcuts/comma.png)             | Decimal Point             |
+| ![Enter Key](images/shortcuts/enter.png) ![Equal Key](images/shortcuts/equal.png)               | Evaluate                  |
+| ![Character c Key](images/shortcuts/c.png)                                                      | All Clear                 |
+| ![Escape Key](images/shortcuts/escape.png) ![Delete Key](images/shortcuts/delete.png)           | Clear Character           |
 
 ## 🔌 Plugins
 | Name                                                                              | Usage                                               |
