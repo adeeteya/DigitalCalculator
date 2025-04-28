@@ -205,6 +205,27 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final isLightMode =
+        MediaQuery.platformBrightnessOf(context) == Brightness.light;
+    if (isLightMode) {
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(
+          statusBarColor: antiFlashWhite,
+          systemNavigationBarColor: antiFlashWhite,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+      );
+    } else {
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(
+          statusBarColor: charlestonGreen,
+          systemNavigationBarColor: charlestonGreen,
+          statusBarIconBrightness: Brightness.light,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
+      );
+    }
     return Shortcuts(
       shortcuts: {
         LogicalKeySet(LogicalKeyboardKey.digit0): const Digit0Intent(),
@@ -331,19 +352,16 @@ class _HomeState extends State<Home> {
         child: Focus(
           autofocus: true,
           child: Scaffold(
-            body: LayoutBuilder(
-              builder: (context, constraints) {
-                //If The Layout is in Landscape Mode
-                if (constraints.maxWidth > constraints.maxHeight) {
-                  //Landscape Layout
-                  final double widthPerButton =
-                      (constraints.maxWidth - 100) / 8.1;
-                  maxChars = getMaxChars(widthPerButton * 5 + 45) - 1;
-                  return SafeArea(
-                    minimum: const EdgeInsets.symmetric(horizontal: 5),
-                    left: false,
-                    right: false,
-                    child: Column(
+            body: SafeArea(
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  //If The Layout is in Landscape Mode
+                  if (constraints.maxWidth > constraints.maxHeight) {
+                    //Landscape Layout
+                    final double widthPerButton =
+                        (constraints.maxWidth - 100) / 8.1;
+                    maxChars = getMaxChars(widthPerButton * 5 + 45) - 1;
+                    return Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Row(
@@ -499,17 +517,15 @@ class _HomeState extends State<Home> {
                           ],
                         ),
                       ],
-                    ),
-                  );
-                }
-                //If The Layout is in Portrait Mode
-                else {
-                  final double widthPerButton =
-                      (constraints.maxWidth - 50) / 4.4;
-                  maxChars =
-                      getMaxChars(MediaQuery.sizeOf(context).width - 20) - 2;
-                  return SafeArea(
-                    child: Column(
+                    );
+                  }
+                  //If The Layout is in Portrait Mode
+                  else {
+                    final double widthPerButton =
+                        (constraints.maxWidth - 50) / 4.4;
+                    maxChars =
+                        getMaxChars(MediaQuery.sizeOf(context).width - 20) - 2;
+                    return Column(
                       children: [
                         const Spacer(),
                         Container(
@@ -522,10 +538,7 @@ class _HomeState extends State<Home> {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                (MediaQuery.platformBrightnessOf(context) ==
-                                        Brightness.light)
-                                    ? pastelGray
-                                    : laurelGreen,
+                                isLightMode ? pastelGray : laurelGreen,
                                 laurelGreen,
                               ],
                             ),
@@ -689,10 +702,10 @@ class _HomeState extends State<Home> {
                         ),
                         const Spacer(),
                       ],
-                    ),
-                  );
-                }
-              },
+                    );
+                  }
+                },
+              ),
             ),
           ),
         ),

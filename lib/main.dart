@@ -5,13 +5,6 @@ import 'package:flutter/services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.transparent,
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-  );
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const DigitalCalculatorApp());
 }
@@ -24,8 +17,14 @@ class DigitalCalculatorApp extends StatelessWidget {
     return MaterialApp(
       title: 'Digital Calculator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: antiFlashWhite),
-      darkTheme: ThemeData(scaffoldBackgroundColor: charlestonGreen),
+      theme: ThemeData(
+        scaffoldBackgroundColor: antiFlashWhite,
+        primaryColor: chineseBlue,
+      ),
+      darkTheme: ThemeData(
+        scaffoldBackgroundColor: charlestonGreen,
+        primaryColor: hanBlue,
+      ),
       home: const Home(),
     );
   }
