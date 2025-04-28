@@ -11,17 +11,44 @@ Please star⭐ the repo if you like what you see😊.
 <img alt="Responsive Support Image" src="images/screenshots/app_screenshot_3.png" height="587px" width="256px"/> <img alt="Floating Window Image" src="images/screenshots/app_screenshot_4.png" height="587px" width="256px"/>
 
 ## 💻 Installation links
-### [Click here to visit the website version](https://adeeteya.github.io/DigitalCalculator/#/)
 
-### Android
-<a href='https://play.google.com/store/apps/details?id=com.adeeteya.digital_calculator&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>Installation Links</th>
+  </tr>
+  <tr>
+    <td>Android</td>
+    <td>
+      <a href="https://play.google.com/store/apps/details?id=com.adeeteya.digital_calculator">
+        <img height="80" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+      </a>
+      <br>
+      <a href="https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-Android.apk">
+        <img width="220" alt="APK download" src="https://img.shields.io/static/v1?label=Download&message=Android+.apk&color=2ea44f&style=for-the-badge&logo=Android&logoColor=white&logoSize=auto">
+      </a>
+    </td>
+  </tr>
 
-(or)
+  <tr>
+      <td>Windows</td>
+      <td>
+        <a href="https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-Windows.exe">
+          <img width="220" alt="Windows App" src="https://img.shields.io/static/v1?label=Download&message=Windows+App&color=blue&style=for-the-badge&logo=webtrees&logoColor=white&logoSize=auto">
+        </a>
+      </td>
+  </tr>
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-android-1.1.1.apk)
+  <tr>
+      <td>Web App</td>
+      <td>
+        <a href="https://adeeteya.github.io/DigitalCalculator/#/">
+          <img width="220" alt="Web App" src="https://img.shields.io/static/v1?label=Webapp&message=Visit+Website&color=blueviolet&style=for-the-badge&logo=googlechrome&logoColor=white&logoSize=auto">
+        </a>
+      </td>
+  </tr>
 
-### Windows
-[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-Windows.exe)
+</table>
 
 ## ✨ Features
 - [x] Keyboard Support (even for Android and iOS)
