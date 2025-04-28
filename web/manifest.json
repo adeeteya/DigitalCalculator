@@ -1,6 +1,6 @@
 {
-    "name": "digital_calculator",
-    "short_name": "digital_calculator",
+    "name": "Digital Calculator",
+    "short_name": "Digital Calculator",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
