@@ -1,3 +1,0 @@
-A neumorphic themed digital calculator which has keyboard support (external bluetooth keyboard) and a few useful shortcuts for quick and easy access. It also has a dedicated dark theme (set based on system theme) for better accessibility.
-
-It is also supported by devices with the floating window feature and it also has a landscape mode.

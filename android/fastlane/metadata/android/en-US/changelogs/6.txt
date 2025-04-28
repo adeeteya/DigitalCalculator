@@ -1,1 +1,0 @@
-Allows users to long press on clear to clear the entire equation

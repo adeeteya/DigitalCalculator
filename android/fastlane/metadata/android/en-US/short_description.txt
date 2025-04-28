@@ -1,1 +1,0 @@
-A neumorphic themed digital calculator which has keyboard and dark mode support

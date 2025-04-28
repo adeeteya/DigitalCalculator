@@ -1,2 +1,0 @@
-C:/Users/adeet/StudioProjects/digital_calculator/android/app/.cxx/Debug/431b212q/x86_64/CMakeFiles/edit_cache.dir
-C:/Users/adeet/StudioProjects/digital_calculator/android/app/.cxx/Debug/431b212q/x86_64/CMakeFiles/rebuild_cache.dir
