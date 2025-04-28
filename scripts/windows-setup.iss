@@ -2,7 +2,7 @@
 #define MyAppPublisher "Adeeteya"
 #define MyAppPublisherURL "https://github.com/adeeteya/"
 #define MyAppURL "https://github.com/adeeteya/DigitalCalculator"
-#define MyAppExeName "Digital Calculator.exe"
+#define MyAppExeName "digital_calculator.exe"
 #define MyAppContact "adeeteya@gmail.com"
 #define MyAppCopyright "Copyright (C) 2023 Adeeteya"
 
