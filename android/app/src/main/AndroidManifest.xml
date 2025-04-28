@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adeeteya.digital_calculator">
+    <uses-permission android:name="android.permission.VIBRATE" />
    <application
         android:label="Digital Calculator"
         android:name="${applicationName}"

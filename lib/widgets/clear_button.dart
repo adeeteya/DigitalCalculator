@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:digital_calculator/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ClearButton extends StatelessWidget {
   const ClearButton({
@@ -15,8 +18,14 @@ class ClearButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-      onLongPress: onLongPress,
+      onTap: () {
+        unawaited(HapticFeedback.mediumImpact());
+        onTap();
+      },
+      onLongPress: () {
+        unawaited(HapticFeedback.vibrate());
+        onLongPress();
+      },
       child: Container(
         width: width,
         decoration: BoxDecoration(

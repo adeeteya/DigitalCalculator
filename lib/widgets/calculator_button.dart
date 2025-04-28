@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:digital_calculator/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CalculatorButton extends StatefulWidget {
   const CalculatorButton({
@@ -28,11 +31,13 @@ class _CalculatorButtonState extends State<CalculatorButton> {
         setState(() {
           isPressed = true;
         });
+        unawaited(HapticFeedback.mediumImpact());
       },
       onPointerUp: (event) {
         setState(() {
           isPressed = false;
         });
+        unawaited(HapticFeedback.heavyImpact());
         widget.onTap();
       },
       child: AnimatedContainer(
