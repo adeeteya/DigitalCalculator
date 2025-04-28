@@ -51,7 +51,7 @@ Source: "D:\a\DigitalCalculator\DigitalCalculator\build\windows\x64\runner\Relea
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-Name: "{app}\uninstall-{#MyAppName}"; Filename: "{uninstallexe}"
+Name: "{app}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
