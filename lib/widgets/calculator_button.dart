@@ -39,41 +39,44 @@ class _CalculatorButtonState extends State<CalculatorButton> {
         width: widget.width,
         duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
-          color: (MediaQuery.of(context).platformBrightness == Brightness.light)
-              ? (widget.isBlue)
-                  ? chineseBlue
-                  : antiFlashWhite
-              : (widget.isBlue)
+          color:
+              (MediaQuery.platformBrightnessOf(context) == Brightness.light)
+                  ? (widget.isBlue)
+                      ? chineseBlue
+                      : antiFlashWhite
+                  : (widget.isBlue)
                   ? hanBlue
                   : charlestonGreen,
           borderRadius: BorderRadius.circular(20),
-          boxShadow: (isPressed || widget.isBlue)
-              ? null
-              : (MediaQuery.of(context).platformBrightness == Brightness.light)
+          boxShadow:
+              (isPressed || widget.isBlue)
+                  ? null
+                  : (MediaQuery.platformBrightnessOf(context) ==
+                      Brightness.light)
                   ? const [
-                      BoxShadow(
-                        color: darkVioletBlue,
-                        offset: Offset(5, 5),
-                        blurRadius: 10,
-                      ),
-                      BoxShadow(
-                        color: Colors.white,
-                        offset: Offset(-5, -5),
-                        blurRadius: 10,
-                      ),
-                    ]
+                    BoxShadow(
+                      color: darkVioletBlue,
+                      offset: Offset(5, 5),
+                      blurRadius: 10,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: Offset(-5, -5),
+                      blurRadius: 10,
+                    ),
+                  ]
                   : const [
-                      BoxShadow(
-                        color: raisinBlack,
-                        offset: Offset(5, 5),
-                        blurRadius: 10,
-                      ),
-                      BoxShadow(
-                        color: gunMetal,
-                        offset: Offset(-5, -5),
-                        blurRadius: 10,
-                      ),
-                    ],
+                    BoxShadow(
+                      color: raisinBlack,
+                      offset: Offset(5, 5),
+                      blurRadius: 10,
+                    ),
+                    BoxShadow(
+                      color: gunMetal,
+                      offset: Offset(-5, -5),
+                      blurRadius: 10,
+                    ),
+                  ],
         ),
         child: AspectRatio(
           aspectRatio: (widget.isDoubleTile) ? 2.1 : 1,
@@ -81,9 +84,10 @@ class _CalculatorButtonState extends State<CalculatorButton> {
             child: Text(
               widget.text,
               style: TextStyle(
-                color: (widget.isBlue)
-                    ? Colors.white
-                    : (MediaQuery.of(context).platformBrightness ==
+                color:
+                    (widget.isBlue)
+                        ? Colors.white
+                        : (MediaQuery.platformBrightnessOf(context) ==
                             Brightness.light)
                         ? chineseBlue
                         : hanBlue,

@@ -3,10 +3,10 @@ import 'package:digital_calculator/intents.dart';
 import 'package:digital_calculator/widgets/calculator_button.dart';
 import 'package:digital_calculator/widgets/clear_button.dart';
 import 'package:digital_calculator/widgets/digital_text.dart';
+import 'package:digital_calculator/widgets/inner_shadow_box_decoration.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class Home extends StatefulWidget {
@@ -89,17 +89,18 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void compute() {
+  Future<void> compute() async {
     if (expressionText == "0" &&
         expressionText == "ERR" &&
         expressionText.contains(RegExp("^[0-9]+\$"))) {
       return;
     }
     try {
-      Parser p = Parser();
-      Expression exp =
-          p.parse(expressionText.replaceAll("x", "*").replaceAll("%", "/100"));
-      double result = exp.evaluate(EvaluationType.REAL, ContextModel());
+      final ShuntingYardParser p = ShuntingYardParser();
+      final Expression exp = p.parse(
+        expressionText.replaceAll("x", "*").replaceAll("%", "/100"),
+      );
+      final double result = exp.evaluate(EvaluationType.REAL, ContextModel());
       setState(() {
         if (result == result.toInt()) {
           expressionText = result.toInt().toString();
@@ -107,13 +108,15 @@ class _HomeState extends State<Home> {
           expressionText = result.toString();
           if (expressionText.split(".").elementAt(1).length > 8) {
             expressionText = result.toStringAsFixed(8);
-            expressionText =
-                expressionText.replaceAll(RegExp(r"([.]*0+)(?!.*\d)"), "");
+            expressionText = expressionText.replaceAll(
+              RegExp(r"([.]*0+)(?!.*\d)"),
+              "",
+            );
           }
         }
       });
       if (expressionText.length > maxChars) {
-        resultScrollController.animateTo(
+        await resultScrollController.animateTo(
           resultScrollController.position.maxScrollExtent,
           duration: const Duration(milliseconds: 500),
           curve: Curves.ease,
@@ -133,8 +136,8 @@ class _HomeState extends State<Home> {
       return;
     }
     try {
-      List numbers = expressionText.split(RegExp((r"[x|\+|\-|/]")));
-      int lastNumIndex = expressionText.lastIndexOf(numbers.last);
+      final List numbers = expressionText.split(RegExp(r"[x|\+|\-|/]"));
+      final int lastNumIndex = expressionText.lastIndexOf(numbers.last);
       if (lastNumIndex != 0) {
         if (expressionText[lastNumIndex - 1] == "-") {
           if (lastNumIndex == 1) {
@@ -187,15 +190,17 @@ class _HomeState extends State<Home> {
   }
 
   Future simulateButtonPress(RenderBox renderBox) async {
-    Offset buttonOffset = Offset(renderBox.localToGlobal(Offset.zero).dx + 10,
-        renderBox.localToGlobal(Offset.zero).dy + 10);
-    GestureBinding.instance.handlePointerEvent(PointerDownEvent(
-      position: buttonOffset,
-    ));
+    final Offset buttonOffset = Offset(
+      renderBox.localToGlobal(Offset.zero).dx + 10,
+      renderBox.localToGlobal(Offset.zero).dy + 10,
+    );
+    GestureBinding.instance.handlePointerEvent(
+      PointerDownEvent(position: buttonOffset),
+    );
     await Future.delayed(const Duration(milliseconds: 175));
-    GestureBinding.instance.handlePointerEvent(PointerUpEvent(
-      position: buttonOffset,
-    ));
+    GestureBinding.instance.handlePointerEvent(
+      PointerUpEvent(position: buttonOffset),
+    );
   }
 
   @override
@@ -230,56 +235,98 @@ class _HomeState extends State<Home> {
       child: Actions(
         actions: {
           Digit0Intent: CallbackAction<Digit0Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit0Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit0Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit1Intent: CallbackAction<Digit1Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit1Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit1Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit2Intent: CallbackAction<Digit2Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit2Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit2Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit3Intent: CallbackAction<Digit3Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit3Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit3Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit4Intent: CallbackAction<Digit4Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit4Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit4Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit5Intent: CallbackAction<Digit5Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit5Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit5Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit6Intent: CallbackAction<Digit6Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit6Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit6Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit7Intent: CallbackAction<Digit7Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit7Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit7Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit8Intent: CallbackAction<Digit8Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit8Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit8Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           Digit9Intent: CallbackAction<Digit9Intent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  digit9Key.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  digit9Key.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           AdditionIntent: CallbackAction<AdditionIntent>(
-              onInvoke: (intent) => setExpressionText("+")),
+            onInvoke: (intent) => setExpressionText("+"),
+          ),
           SubtractionIntent: CallbackAction<SubtractionIntent>(
-              onInvoke: (intent) => setExpressionText("-")),
+            onInvoke: (intent) => setExpressionText("-"),
+          ),
           MultiplicationIntent: CallbackAction<MultiplicationIntent>(
-              onInvoke: (intent) => setExpressionText("x")),
+            onInvoke: (intent) => setExpressionText("x"),
+          ),
           DivisionIntent: CallbackAction<DivisionIntent>(
-              onInvoke: (intent) => setExpressionText("/")),
+            onInvoke: (intent) => setExpressionText("/"),
+          ),
           PercentIntent: CallbackAction<PercentIntent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  percentageKey.currentContext?.findRenderObject()
-                      as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  percentageKey.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           PeriodIntent: CallbackAction<PeriodIntent>(
-              onInvoke: (intent) => simulateButtonPress(
-                  commaKey.currentContext?.findRenderObject() as RenderBox)),
+            onInvoke:
+                (intent) async => simulateButtonPress(
+                  commaKey.currentContext?.findRenderObject() as RenderBox,
+                ),
+          ),
           BackSpaceIntent: CallbackAction<BackSpaceIntent>(
-              onInvoke: (intent) => deleteCharacter()),
-          AllClearIntent:
-              CallbackAction<AllClearIntent>(onInvoke: (intent) => allClear()),
-          ComputeIntent:
-              CallbackAction<ComputeIntent>(onInvoke: (intent) => compute()),
+            onInvoke: (intent) => deleteCharacter(),
+          ),
+          AllClearIntent: CallbackAction<AllClearIntent>(
+            onInvoke: (intent) => allClear(),
+          ),
+          ComputeIntent: CallbackAction<ComputeIntent>(
+            onInvoke: (intent) async => compute(),
+          ),
         },
         child: Focus(
           autofocus: true,
@@ -289,7 +336,8 @@ class _HomeState extends State<Home> {
                 //If The Layout is in Landscape Mode
                 if (constraints.maxWidth > constraints.maxHeight) {
                   //Landscape Layout
-                  double widthPerButton = (constraints.maxWidth - 100) / 8.1;
+                  final double widthPerButton =
+                      (constraints.maxWidth - 100) / 8.1;
                   maxChars = getMaxChars(widthPerButton * 5 + 45) - 1;
                   return SafeArea(
                     minimum: const EdgeInsets.symmetric(horizontal: 5),
@@ -304,7 +352,7 @@ class _HomeState extends State<Home> {
                             Container(
                               width: widthPerButton * 5.5,
                               padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
+                              decoration: InnerShadowBoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 gradient: const LinearGradient(
                                   begin: Alignment.topLeft,
@@ -313,10 +361,9 @@ class _HomeState extends State<Home> {
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.5),
+                                    color: Colors.black.withValues(alpha: 0.5),
                                     spreadRadius: 1,
                                     blurRadius: 10,
-                                    inset: true,
                                   ),
                                 ],
                               ),
@@ -457,9 +504,10 @@ class _HomeState extends State<Home> {
                 }
                 //If The Layout is in Portrait Mode
                 else {
-                  double widthPerButton = (constraints.maxWidth - 50) / 4.4;
+                  final double widthPerButton =
+                      (constraints.maxWidth - 50) / 4.4;
                   maxChars =
-                      getMaxChars(MediaQuery.of(context).size.width - 20) - 2;
+                      getMaxChars(MediaQuery.sizeOf(context).width - 20) - 2;
                   return SafeArea(
                     child: Column(
                       children: [
@@ -468,13 +516,13 @@ class _HomeState extends State<Home> {
                           width: double.infinity,
                           padding: const EdgeInsets.all(20),
                           margin: const EdgeInsets.symmetric(horizontal: 20),
-                          decoration: BoxDecoration(
+                          decoration: InnerShadowBoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                (MediaQuery.of(context).platformBrightness ==
+                                (MediaQuery.platformBrightnessOf(context) ==
                                         Brightness.light)
                                     ? pastelGray
                                     : laurelGreen,
@@ -483,10 +531,9 @@ class _HomeState extends State<Home> {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.5),
+                                color: Colors.black.withValues(alpha: 0.5),
                                 spreadRadius: 1,
                                 blurRadius: 10,
-                                inset: true,
                               ),
                             ],
                           ),
@@ -552,7 +599,7 @@ class _HomeState extends State<Home> {
                               text: "X",
                               isBlue: true,
                               onTap: () => setExpressionText("x"),
-                            )
+                            ),
                           ],
                         ),
                         const SizedBox(height: 16),
@@ -582,7 +629,7 @@ class _HomeState extends State<Home> {
                               text: "-",
                               isBlue: true,
                               onTap: () => setExpressionText("-"),
-                            )
+                            ),
                           ],
                         ),
                         const SizedBox(height: 16),
@@ -612,7 +659,7 @@ class _HomeState extends State<Home> {
                               text: "+",
                               isBlue: true,
                               onTap: () => setExpressionText("+"),
-                            )
+                            ),
                           ],
                         ),
                         const SizedBox(height: 16),
@@ -637,7 +684,7 @@ class _HomeState extends State<Home> {
                               text: "=",
                               isBlue: true,
                               onTap: compute,
-                            )
+                            ),
                           ],
                         ),
                         const Spacer(),

@@ -18,10 +18,10 @@ Please star⭐ the repo if you like what you see😊.
 
 (or)
 
-[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.1/DigitalCalculator-android-1.1.1.apk)
+[![Download apk](https://img.shields.io/badge/Download-apk-green)](https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-android-1.1.1.apk)
 
 ### Windows
-[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/download/1.1.1/DigitalCalculator-Windows.exe)
+[![Download exe](https://img.shields.io/badge/Download-exe-blue)](https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-Windows.exe)
 
 ## ✨ Features
 - [x] Keyboard Support (even for Android and iOS)

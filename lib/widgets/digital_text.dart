@@ -2,11 +2,12 @@ import 'package:digital_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class DigitalText extends StatelessWidget {
-  const DigitalText(
-      {super.key,
-      required this.initialMaxChars,
-      required this.text,
-      required this.scrollController});
+  const DigitalText({
+    super.key,
+    required this.initialMaxChars,
+    required this.text,
+    required this.scrollController,
+  });
   final int initialMaxChars;
   final String text;
   final ScrollController scrollController;
@@ -23,9 +24,10 @@ class DigitalText extends StatelessWidget {
     return SingleChildScrollView(
       controller: scrollController,
       scrollDirection: Axis.horizontal,
-      physics: (initialMaxChars > text.length)
-          ? const NeverScrollableScrollPhysics()
-          : const BouncingScrollPhysics(),
+      physics:
+          (initialMaxChars > text.length)
+              ? const NeverScrollableScrollPhysics()
+              : const BouncingScrollPhysics(),
       reverse: true,
       child: Stack(
         alignment: Alignment.centerRight,
@@ -42,7 +44,7 @@ class DigitalText extends StatelessWidget {
           Text(
             bgDisplayText,
             style: TextStyle(
-              color: onyx.withOpacity(0.08),
+              color: onyx.withValues(alpha: 0.08),
               fontSize: 35,
               fontFamily: "Digital Numbers",
             ),

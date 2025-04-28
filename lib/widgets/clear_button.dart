@@ -20,11 +20,11 @@ class ClearButton extends StatelessWidget {
       child: Container(
         width: width,
         decoration: BoxDecoration(
-          color: (MediaQuery.of(context).platformBrightness == Brightness.light)
-              ? chineseBlue
-              : hanBlue,
+          color:
+              (MediaQuery.platformBrightnessOf(context) == Brightness.light)
+                  ? chineseBlue
+                  : hanBlue,
           borderRadius: BorderRadius.circular(20),
-          boxShadow: null,
         ),
         child: const AspectRatio(
           aspectRatio: 1,
