@@ -35,6 +35,15 @@ Please star⭐ the repo if you like what you see😊.
   </tr>
 
   <tr>
+      <td>Linux</td>
+      <td>
+        <a href="https://snapcraft.io/digital-calculator">
+          <img alt="Get it from the Snap Store" src=https://snapcraft.io/en/dark/install.svg />
+        </a>
+      </td>
+  </tr>
+
+  <tr>
       <td>Windows</td>
       <td>
         <a href="https://github.com/adeeteya/DigitalCalculator/releases/latest/download/DigitalCalculator-Windows.exe">
