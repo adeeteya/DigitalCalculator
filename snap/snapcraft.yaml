@@ -1,0 +1,34 @@
+name: digital-calculator
+version: 1.2.1
+summary: A neumorphic themed digital calculator
+description: Digital Calculator is a fully function Calculator Clone with a neumorphic design. It has a keyboard support and dark mode support. It is built using Flutter and Dart.
+icon: snap/gui/digital-calculator.png
+contact: mailto:adeeteya@gmail.com
+source-code: https://github.com/adeeteya/DigitalCalculator
+issues: https://github.com/adeeteya/DigitalCalculator/issues
+license: MIT
+
+confinement: strict
+base: core22
+grade: stable
+
+slots:
+  digital-calculator:
+    interface: dbus
+    bus: session
+    name: com.adeeteya.digital_calculator
+
+apps:
+  digital-calculator:
+    command: digital_calculator
+    extensions: [gnome]
+    plugs:
+      - desktop
+      - home
+    slots:
+      - digital-calculator
+parts:
+  digital-calculator:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart

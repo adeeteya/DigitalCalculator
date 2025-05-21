@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.2.1
+Name=Digital Calculator
+Comment=A neumorphic themed digital calculator which has keyboard and dark mode support
+Exec=digital-calculator
+Icon=${SNAP}/meta/gui/digital-calculator.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;
