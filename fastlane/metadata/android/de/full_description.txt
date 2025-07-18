@@ -1,0 +1,3 @@
+<i>Digital Calculator</i> ist ein neumorpher digitaler Taschenrechner mit Tastaturunterstützung (externe Bluetooth-Tastatur) und einigen nützlichen Verknüpfungen für schnellen und einfachen Zugriff. Es hat auch ein dediziertes dunkles Design (basierend auf dem Systemdesign) für eine bessere Zugänglichkeit.
+
+Es wird auch von Geräten mit der Floating-Window-Funktion unterstützt und hat auch einen Landschaftsmodus.

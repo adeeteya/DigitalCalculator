@@ -1,0 +1,1 @@
+digitaler Taschenrechner mit neumorphem Thema, Tastatur- und DarkMode-Support
